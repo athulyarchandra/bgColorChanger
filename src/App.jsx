@@ -13,7 +13,7 @@ function App() {
     let letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+      setBgColor(color += letters[Math.floor(Math.random() * 16)])
     }
     return color;
   }
@@ -24,9 +24,9 @@ function App() {
 
   return (
     <>
-      <div style={{minHeight:'100vh'}} className='d-flex flex-column justify-content-center align-items-center'>
+      <div style={{minHeight:'100vh',width:'100%'}} className='d-flex flex-column justify-content-center align-items-center'>
         <div id="changeColor" style={{backgroundColor: bgColor}}>
-          <h1 className='p-2 border border-light' >Click To Change Background Color</h1>
+          <h1 className='p-2 border border-dark' >Customize Your Background: Choose Any Color You Wish!</h1>
           <div>
             <button className="btn" onClick={() => changeColor('rgb(89, 199, 199)')} style={{backgroundColor:"rgb(89, 199, 199)"}}></button>
             <button className="btn" onClick={() => changeColor('palevioletred')} style={{backgroundColor:"palevioletred"}}></button>
@@ -34,7 +34,7 @@ function App() {
             <button className="btn" onClick={() => changeColor('wheat')} style={{backgroundColor:"wheat"}}></button>
             <button className="btn" onClick={() => changeColor('rgb(212, 16, 16)')} style={{backgroundColor:"rgb(212, 16, 16)"}}></button>
           </div>
-          <button className="btn p-2 fs-5" onClick={handleClickFunction} style={{width:'330px'}}>Random Color</button>
+          <button className="btn p-2 fs-2 text-darkr" onClick={handleClickFunction} style={{width:'330px'}}>Random Color</button>
         </div>
       </div>
     </>
